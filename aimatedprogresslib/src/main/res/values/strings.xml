@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AimatedProgressLib</string>
+    <string name="loading">Loading&#8230;</string>
 </resources>
