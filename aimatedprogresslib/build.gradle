@@ -4,12 +4,13 @@ apply plugin: 'com.github.dcendents.android-maven'
 
 group='com.github.yash786agg'
 
-android {
+android
+{
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
 
-
-    defaultConfig {
+    defaultConfig
+    {
         minSdkVersion 15
         targetSdkVersion 29
         versionCode 1
@@ -25,14 +26,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
-dependencies {
+dependencies
+{
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 }

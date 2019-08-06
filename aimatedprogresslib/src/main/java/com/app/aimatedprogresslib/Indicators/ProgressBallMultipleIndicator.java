@@ -1,22 +1,18 @@
-package com.app.aimatedprogresslib;
-
-/*
- * Created by Yash on 03/08/17.
- */
+package com.app.aimatedprogresslib.Indicators;
 
 import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.animation.LinearInterpolator;
-import com.app.aimatedprogresslib.Indicators.Indicator;
+import com.app.aimatedprogresslib.Indicator;
 
 import java.util.ArrayList;
 
 /*
- * Created by Yash on 21/3/17.
+ * Created by Yash on 06/08/19.
  */
 
-class ProgressBallMultipleIndicator extends Indicator
+public class ProgressBallMultipleIndicator extends Indicator
 {
 
     private float[] scaleFloats=new float[]{1,1,1};

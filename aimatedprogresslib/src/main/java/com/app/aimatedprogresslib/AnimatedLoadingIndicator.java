@@ -13,11 +13,18 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AnimationUtils;
-import com.app.aimatedprogresslib.Indicators.Indicator;
+import androidx.annotation.NonNull;
+import com.app.aimatedprogresslib.Indicators.ProgressBallMultipleIndicator;
 
 /*
- * Created by Yash on 22/2/17.
+ * Created by Yash on 06/08/19.
  */
+
+/*
+*   git tag -a "v1.0" -m "aimatedprogresslib version 1.0"
+
+    git push origin v1.1
+*/
 
 public class AnimatedLoadingIndicator extends View
 {
@@ -233,7 +240,7 @@ public class AnimatedLoadingIndicator extends View
     }
 
     @Override
-    protected boolean verifyDrawable(Drawable who)
+    protected boolean verifyDrawable(@NonNull Drawable who)
     {
         return who == mIndicator || super.verifyDrawable(who);
     }
@@ -245,7 +252,7 @@ public class AnimatedLoadingIndicator extends View
             return;
         }
 
-        if (mIndicator instanceof Animatable)
+        if (mIndicator != null)
         {
             mShouldStartAnimationDrawable = true;
         }
@@ -254,7 +261,7 @@ public class AnimatedLoadingIndicator extends View
 
     void stopAnimation()
     {
-        if (mIndicator instanceof Animatable)
+        if (mIndicator != null)
         {
             mIndicator.stop();
             mShouldStartAnimationDrawable = false;
@@ -280,7 +287,7 @@ public class AnimatedLoadingIndicator extends View
     }
 
     @Override
-    protected void onVisibilityChanged( View changedView, int visibility)
+    protected void onVisibilityChanged(@NonNull View changedView, int visibility)
     {
         super.onVisibilityChanged(changedView, visibility);
         if (visibility == GONE || visibility == INVISIBLE)
@@ -294,7 +301,7 @@ public class AnimatedLoadingIndicator extends View
     }
 
     @Override
-    public void invalidateDrawable( Drawable dr)
+    public void invalidateDrawable(@NonNull Drawable dr)
     {
         if (verifyDrawable(dr))
         {
@@ -370,7 +377,7 @@ public class AnimatedLoadingIndicator extends View
             d.draw(canvas);
             canvas.restoreToCount(saveCount);
 
-            if (mShouldStartAnimationDrawable && d instanceof Animatable)
+            if (mShouldStartAnimationDrawable)
             {
                 ((Animatable) d).start();
                 mShouldStartAnimationDrawable = false;

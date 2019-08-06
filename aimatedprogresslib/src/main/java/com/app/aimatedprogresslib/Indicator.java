@@ -1,4 +1,4 @@
-package com.app.aimatedprogresslib.Indicators;
+package com.app.aimatedprogresslib;
 
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
