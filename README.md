@@ -88,6 +88,41 @@ progressDialog.dismiss();
 progressDialog.cancel();
 ```
 
+//custom_dialog_progress.xml
+```xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/transparent">
+
+    <com.app.aimatedprogresslib.AnimatedLoadingIndicator
+        android:id="@+id/custom_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/AnimatedLoadingIndicatorView.Large"
+        android:layout_centerInParent="true"
+        app:indicatorName="com.app.aimatedprogresslib.Indicators.ProgressBallMultipleIndicator"
+        app:indicatorColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/progress_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/custom_progress"
+        android:text="@string/loading"
+        android:textStyle="bold"
+        android:textSize="19sp"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
+```
+
 # Prerequisites
 * __Android Studio 3.4__
 * __Gradle version 3.4.2__
